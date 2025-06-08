@@ -9,7 +9,7 @@ const app = express();
 
 app.use(cors());
 
-app.get("/", (req, res) => {
+app.get("/", (req: Request, res: Response) => {
   res.send("This is fucking awasome");
 });
 
