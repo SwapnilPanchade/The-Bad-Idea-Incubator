@@ -1,8 +1,7 @@
-import express, { Express, Response, Request, Application } from "express";
-import cors from "cors";
+import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
-
-//dotenv cofig
+import cors from "cors";
+import { log } from "console";
 
 dotenv.config();
 const app = express();
@@ -10,10 +9,12 @@ const app = express();
 app.use(cors());
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("This is fucking awasome");
+  res.send("This is call request say hi");
+  console.log("The get api is working fine");
 });
 
-const port = process.env.PORT || 1905;
+const port = process.env.PORT || 2017;
+
 app.listen(port, () => {
-  console.log(`The app is listening on the port ${port}`);
+  log(`The Server is running on the port ${port}`);
 });
